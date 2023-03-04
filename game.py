@@ -225,12 +225,15 @@ def all(pl_s, b_min_s, b_max_s, m_r, bg_c, pl1_c, pl2_c, ball_c):
                 system('python menu.py')
 
     # цикл обновления окна 
-    while True:
-        pl1.pl_move()
-        pl2.pl_move()
-        coords_update()
-        bl.collision()
-        check_win(mv.player1_score, 'Left')
-        check_win(mv.player2_score, 'Right')
-        w.update()    
-        sleep(0.01)
+    try:
+        while True:
+            pl1.pl_move()
+            pl2.pl_move()
+            coords_update()
+            bl.collision()
+            check_win(mv.player1_score, 'Left')
+            check_win(mv.player2_score, 'Right')
+            w.update()    
+            sleep(0.01)
+    except:
+        pass

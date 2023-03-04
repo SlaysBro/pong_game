@@ -56,7 +56,7 @@ def play():
 # функция, отвечающая за выход из программы на кнопку ВЫХОД
 def exit():
     if mv.can_click:
-        w.quit()
+        w.destroy()
 
 # функция, отвечающая за анимацию открытия настроек на кнопку НАСТРОЙКИЙ
 def options_open():
@@ -323,9 +323,12 @@ pl2 = pl_pre_show(blk2, -1)
 ball = ball_preshow()
 
 # цикл, отвечающий за обновление окна предпросмотра 100 раз в сек.
-while True:
-    pl1.pl_move(2)
-    pl2.pl_move(2)
-    ball.ball_move()
-    w.update()
-    sleep(0.01)
+try:
+    while True:
+        pl1.pl_move(2)
+        pl2.pl_move(2)
+        ball.ball_move()
+        w.update()
+        sleep(0.01)
+except:
+    pass
